@@ -1,0 +1,85 @@
+/* Styles Design the page in the Google search style in dark mode */
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 16px;
+  height: 44px;
+  padding: 0 16px;
+  width: 90%;
+}
+
+button {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 44px;
+  margin-left: 8px;
+  padding: 0 16px;
+}
+
+textarea {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 16px;
+  padding: 21px;
+  width: 500px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message {
+  margin-top: 16px;
+  text-align: center;
+  height: 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.imagePreview {
+  height: 300px;
+}
