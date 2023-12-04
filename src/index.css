@@ -53,13 +53,14 @@ textarea {
   color: #fff;
   font-size: 16px;
   padding: 21px;
-  width: 500px;
   resize: none;
+  width: 400px;
 }
 
 textarea:focus {
   outline: none;
 }
+
 .container {
   align-items: center;
   display: flex;
@@ -82,4 +83,24 @@ textarea:focus {
 
 .imagePreview {
   height: 300px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .result {
+    flex-direction: column;
+  }
+
+  .imagePreview {
+    width: 100%;
+  }
+
+  textarea {
+    width: auto;
+    height: 300px;
+  }
 }

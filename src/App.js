@@ -4,8 +4,9 @@ import generateImage from "./azure-image-generation.js";
 import "./index.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
   const [entry, setEntry] = React.useState("");
+  const [data, setData] = React.useState(null);
+  const [url, setUrl] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [message, setMessage] = React.useState("");
 
@@ -26,9 +27,10 @@ function App() {
     // Validate entry is descriptive and is not url or empty
     if (entry.trim() !== "" && !entry.startsWith("http")) {
       setLoading(true);
-      const result = await generateImage();
+      setUrl("");
+      const result = await generateImage(entry);
       setData(null);
-      setEntry(result);
+      setUrl(result);
       setLoading(false);
       setMessage("");
     } else {
@@ -38,6 +40,7 @@ function App() {
 
   const clear = () => {
     setData(null);
+    setUrl("");
     setEntry("");
     setMessage("");
   };
@@ -81,7 +84,20 @@ function App() {
           <h2>Analysis result</h2>
           <div className="result">
             <img src={entry} alt="analyzed" className="imagePreview" />
-            {data && <textarea>{JSON.stringify(data, null, 2)}</textarea>}
+            {data && (
+              <textarea
+                value={JSON.stringify(data, null, 2)}
+                readOnly
+              ></textarea>
+            )}
+          </div>
+        </div>
+      )}
+      {url && (
+        <div>
+          <h2>Generation result</h2>
+          <div className="result">
+            <img src={url} alt="generated" className="imagePreview" />
           </div>
         </div>
       )}
