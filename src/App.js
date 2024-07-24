@@ -50,12 +50,12 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Computer Vision</h1>
+      <h1>Generate image with Open AI</h1>
       <input
         type="text"
         id="box"
         name="box"
-        placeholder="Enter URL to analyze or textual prompt to generate an image"
+        placeholder="Enter textual prompt to generate an image"
         value={entry}
         onChange={(event) => setEntry(event.target.value)}
       ></input>
@@ -64,7 +64,7 @@ function App() {
       <div className="options">
         <button type="button" onClick={analyze} disabled={loading}>
           Analyze
-        </button>
+        </button> 
         <button type="button" onClick={generate} disabled={loading}>
           Generate
         </button>
